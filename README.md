@@ -16,6 +16,8 @@
 /
 gulpfile.js       // gulp 세팅 js
 app.js            // 가상호스트 설정 js
+package.json
+package-lock.json
 └ workspace       // 작업 폴더
   └ assets
     └ fonts
@@ -23,5 +25,8 @@ app.js            // 가상호스트 설정 js
     └ sass
     └ js
   └ html
+    └ include
 └ dist            // 산출물 폴더
 ```
+
+## 설치
