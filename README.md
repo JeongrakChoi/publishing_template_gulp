@@ -120,7 +120,7 @@ gulp.task('scss:compile', () => {
 });
 ```
 
-### 4. resources (js, fonts)
+### 5. resources (js, fonts)
 > js, font는 따로 압축 라이브러리를 추가하지 않았음.    
 > 빌드시 산출물 폴더에 복사만 가능  
 
@@ -141,5 +141,24 @@ gulp.task('fonts', () => {
 			
 		resolve();
 	});
+});
+```
+
+### 6. imagemin
+> jpg/gif/png/svg 파일을 minify 압축 해주는 Task  
+> 추가된 이미지 감지하여 dist (산출물 폴더)로 자동 변환    
+
+```javascript
+gulp.task('imagemin', () => { 
+	return new Promise( resolve => { 
+		gulp.src( PATH.ASSETS.IMAGES + '/**/*.*' ) 
+			.pipe(imagemin({ 
+            	optimizationLevel: 5, progressive: true, interlaced: true 
+        	}))
+
+		.pipe( gulp.dest(DEST_PATH.ASSETS.IMAGES));
+				
+		resolve(); 
+	}); 
 });
 ```
