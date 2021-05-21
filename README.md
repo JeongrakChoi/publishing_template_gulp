@@ -76,3 +76,19 @@ DEST_PATH = {
 	} 
 }; 
 ```
+
+### 3. ejs
+> include 목적으로 사용하며, 작업 폴더 내 include폴더에 .ejs 확장자로 작업
+> 빌드시 산출물 폴더에 html 확장자로 변환
+
+```javascript
+gulp.task('gulpEjs',() => {
+	return new Promise( resolve => {
+		gulp.src(PATH.HTML + '/**/*.html')
+			.pipe( ejs() )
+			.pipe(gulp.dest(DEST_PATH.HTML));
+
+		resolve();
+	})
+});
+```
