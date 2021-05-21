@@ -174,3 +174,42 @@ gulp.task('clean', () => {
 	}); 
 });
 ```
+
+### 8. nodemon
+> express 가상호스트 띄우기 위한 Task 
+
+```javascript
+gulp.task('nodemon:start', () => { 
+    return new Promise( resolve => { 
+        nodemon({ 
+            script: 'app.js', 
+            watch: DEST_PATH.HTML
+        }); 
+        
+        resolve(); 
+    });
+});
+```
+
+### 9. watch
+> 파일 변경 감지(watch)하여 등록된 Task 재 실행
+
+```javascript
+gulp.task('watch', () => { 
+	return new Promise( resolve => { 
+		gulp.watch(PATH.HTML + "/**/*.html", gulp.series(['gulpEjs'])); 
+		gulp.watch(PATH.ASSETS.STYLE + "/**/*.scss", gulp.series(['scss:compile'])); 
+		gulp.watch(PATH.ASSETS.SCRIPTS + "/**/*.js", gulp.series(['javascript']));
+		gulp.watch(PATH.ASSETS.IMAGES + "/**/*.*", gulp.series(['imagemin']))
+
+		resolve(); 
+	}); 
+}); 
+```
+
+### 10. Task 설정
+> gulp 명령어 실행 시, 기본 Task 실행
+
+```javascript
+gulp.task( 'default', gulp.series(['clean', 'gulpEjs', 'scss:compile', 'javascript', 'fonts', 'imagemin', 'nodemon:start', 'watch']) );
+```
