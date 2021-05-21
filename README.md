@@ -93,7 +93,7 @@ gulp.task('gulpEjs',() => {
 });
 ```
 
-### 3. sass
+### 4. sass
 > sass 전처리기  
 > sourcesmaps, watch와 연동해 자동화 시킬 것  
 > 작업물은 산출물 폴더 내 css로 변환
@@ -116,6 +116,30 @@ gulp.task('scss:compile', () => {
 			.pipe( gulp.dest( DEST_PATH.ASSETS.STYLE ) );
 		
 		resolve(); 
+	});
+});
+```
+
+### 4. resources (js, fonts)
+> js, font는 따로 압축 라이브러리를 추가하지 않았음.    
+> 빌드시 산출물 폴더에 복사만 가능  
+
+```javascript
+gulp.task('javascript', () => { 
+	return new Promise( resolve => { 
+		gulp.src( PATH.ASSETS.SCRIPTS + '/**/*.js')
+			.pipe( gulp.dest( DEST_PATH.ASSETS.SCRIPTS)); 
+			
+		resolve();
+	});
+});
+
+gulp.task('fonts', () => { 
+	return new Promise( resolve => { 
+		gulp.src( PATH.ASSETS.FONTS + '/**/*.*')
+			.pipe( gulp.dest( DEST_PATH.ASSETS.FONTS)); 
+			
+		resolve();
 	});
 });
 ```
