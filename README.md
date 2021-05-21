@@ -50,3 +50,29 @@ var nodemon = require('gulp-nodemon');
 var imagemin = require('gulp-imagemin');
 var del = require('del');
 ```
+
+### 2. 파일 경로
+> 작업 폴더와 산출물 경로 따로 구분
+
+```javascript
+// 소스 파일 경로
+var PATH = { 
+    HTML: './workspace/html',
+	ASSETS: { 
+		FONTS: './workspace/assets/fonts',
+		IMAGES: './workspace/assets/images',
+		STYLE: './workspace/assets/sass',
+		SCRIPTS: './workspace/assets/js'
+	} 
+}, 
+// 산출물 경로 
+DEST_PATH = { 
+    HTML: './dist/html',
+	ASSETS: {
+		FONTS: './dist/resources/fonts',
+		IMAGES: './dist/resources/images',
+		STYLE: './dist/resources/css',
+		SCRIPTS: './dist/resources/js'
+	} 
+}; 
+```
