@@ -78,7 +78,7 @@ DEST_PATH = {
 ```
 
 ### 3. ejs
-> include 목적으로 사용하며, 작업 폴더 내 include폴더에 .ejs 확장자로 작업
+> include 목적으로 사용하며, 작업 폴더 내 include폴더에 .ejs 확장자로 작업  
 > 빌드시 산출물 폴더에 html 확장자로 변환
 
 ```javascript
@@ -90,5 +90,32 @@ gulp.task('gulpEjs',() => {
 
 		resolve();
 	})
+});
+```
+
+### 3. sass
+> sass 전처리기  
+> sourcesmaps, watch와 연동해 자동화 시킬 것  
+> 작업물은 산출물 폴더 내 css로 변환
+
+```javascript
+gulp.task('scss:compile', () => { 
+	return new Promise( resolve => { 
+		var options = { 
+			outputStyle: "nested", // nested, expanded, compact, compressed 
+			indentType: "tab", // space, tab 
+			indentWidth: 4,  
+			precision: 8, 
+			sourceComments: true // 코멘트 제거 여부 
+		}; 
+		
+		gulp.src( PATH.ASSETS.STYLE + '/**/*.scss' )
+			.pipe( sourcemaps.init() )
+			.pipe( scss(options) )
+			.pipe( sourcemaps.write() )
+			.pipe( gulp.dest( DEST_PATH.ASSETS.STYLE ) );
+		
+		resolve(); 
+	});
 });
 ```
