@@ -30,3 +30,8 @@ package-lock.json
 ```
 
 ## 설치
+```
+node, npm 설치 후
+> npm init
+> npm install -g gulp 또는 폴더 내 설치 npm install gulp -d
+```
