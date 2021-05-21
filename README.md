@@ -162,3 +162,15 @@ gulp.task('imagemin', () => {
 	}); 
 });
 ```
+
+### 7. clean
+> 삭제된 파일이 있을 시, 빌드 통해 산출물 폴더에 최신화 시키기 위해 적용  
+
+```javascript
+gulp.task('clean', () => { 
+	return new Promise( resolve => { 
+		del.sync('./dist');
+		resolve(); 
+	}); 
+});
+```
