@@ -35,3 +35,18 @@ node, npm 설치 후
 > npm init
 > npm install -g gulp 또는 폴더 내 설치 npm install gulp -d
 ```
+
+## gulpfile.js
+
+### 1. 모듈 호출
+> Gulp 사용 및 자동화를 위해 필요한 모듈 변수 선언
+
+```javascript
+var gulp = require('gulp');
+var ejs = require('gulp-ejs');
+var scss = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var nodemon = require('gulp-nodemon');
+var imagemin = require('gulp-imagemin');
+var del = require('del');
+```
