@@ -1,26 +1,35 @@
 {
   "name": "publishing_template_gulp",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "웹퍼블리셔 작업용 개발환경(자동화 빌드)",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeongrakChoi/publishing_template_gulp.git"
+  },
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeongrakChoi/publishing_template_gulp/issues"
+  },
+  "homepage": "https://github.com/JeongrakChoi/publishing_template_gulp#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.14",
-    "del": "^6.0.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
+    "browser-sync": "^2.27.10",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
     "gulp": "^4.0.2",
     "gulp-ejs": "^5.1.0",
     "gulp-imagemin": "^7.1.0",
     "gulp-nodemon": "^2.5.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.1.0",
+    "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "gulp-watch": "^5.0.1"
+    "gulp-watch": "^5.0.1",
+    "sass": "^1.55.0"
   },
-  "dependencies": {},
-  "description": ""
+  "dependencies": {
+    "del": "^6.0.0"
+  }
 }

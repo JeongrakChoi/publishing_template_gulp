@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var ejs = require('gulp-ejs');
-var scss = require('gulp-sass');
+var scss = require('gulp-sass')(require('sass'));
 var sourcemaps = require('gulp-sourcemaps');
 var nodemon = require('gulp-nodemon');
 var imagemin = require('gulp-imagemin');
@@ -42,7 +42,7 @@ gulp.task('gulpEjs',() => {
 gulp.task('scss:compile', () => { 
 	return new Promise( resolve => { 
 		var options = { 
-			outputStyle: "nested", // nested, expanded, compact, compressed 
+			outputStyle: "compressed", // nested, expanded, compact, compressed 
 			indentType: "tab", // space, tab 
 			indentWidth: 4,  
 			precision: 8, 
